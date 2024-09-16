@@ -1,0 +1,32 @@
+.header-menu {
+    height: 100vh; /* Ocupa toda a altura da tela */
+    width: 250px;  /* Define a largura da barra lateral */
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #f8f8f8;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menu-label {
+    padding-left: 20px;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .menu-list {
+    margin-top: 20px;
+  }
+  
+  .menu-list li a {
+    padding: 10px 20px;
+    display: block;
+    color: #4a4a4a;
+    font-size: 1rem;
+  }
+  
+  .menu-list li a:hover, .menu-list li a.is-active {
+    background-color: #00d1b2;
+    color: white;
+  }
