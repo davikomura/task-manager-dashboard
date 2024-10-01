@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App.tsx';
 import { Dashboard } from './components/Dashboard.tsx';
-import { TaskList } from './components/TaskList.tsx';
+import { TaskList } from './components/TaskList/TaskList.tsx';
 
 const routes = [
 
