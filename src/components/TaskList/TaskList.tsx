@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { TaskItem } from '../TaskItem';
 import './TaskList.css';
-import { FilterBas } from '../FilterBas';
+import { FilterBas } from '../FilterBas/FilterBas';
 
 interface Task {
   id: number;
