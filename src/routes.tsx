@@ -1,7 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App.tsx';
-import { Dashboard } from './components/Dashboard.tsx';
-import { TaskList } from './components/TaskList.tsx';
+import { Dashboard } from './Pages/Dashboard.tsx';
+import { TaskList } from './Pages/TaskList.tsx';
+import { Profile } from './Pages/profile/Profile.tsx';
+import { Login } from './Pages/auth/Login.tsx';
 
 const routes = [
 
@@ -14,8 +16,16 @@ const routes = [
         element: <Dashboard />,
       },
       {
-        path: "/tasks",
+        path: "/Tasks",
         element: <TaskList />,
+      },
+      {
+        path: "/Profile",
+        element: <Profile />,
+      },
+      {
+        path: "/Login",
+        element: <Login />,
       },
     ],
   }

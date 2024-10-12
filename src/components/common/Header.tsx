@@ -36,7 +36,7 @@ export const Header = () => {
         </ListItemButton>
 
         {/* Link para Tasks */}
-        <ListItemButton component={Link} to="/tasks" sx={{ "&:hover": { backgroundColor: "#e3f2fd" } }}>
+        <ListItemButton component={Link} to="/Tasks" sx={{ "&:hover": { backgroundColor: "#e3f2fd" } }}>
           <ListItemIcon>
             <AssignmentIcon color="primary" />
           </ListItemIcon>
@@ -44,7 +44,7 @@ export const Header = () => {
         </ListItemButton>
 
         {/* Link para Team */}
-        <ListItemButton component={Link} to="/team" sx={{ "&:hover": { backgroundColor: "#e3f2fd" } }}>
+        <ListItemButton component={Link} to="/Team" sx={{ "&:hover": { backgroundColor: "#e3f2fd" } }}>
           <ListItemIcon>
             <GroupIcon color="primary" />
           </ListItemIcon>
@@ -52,7 +52,7 @@ export const Header = () => {
         </ListItemButton>
 
         {/* Link para Settings */}
-        <ListItemButton component={Link} to="/settings" sx={{ "&:hover": { backgroundColor: "#e3f2fd" } }}>
+        <ListItemButton component={Link} to="/Settings" sx={{ "&:hover": { backgroundColor: "#e3f2fd" } }}>
           <ListItemIcon>
             <SettingsIcon color="primary" />
           </ListItemIcon>
@@ -74,7 +74,7 @@ export const Header = () => {
           transition: "background-color 0.3s ease",
         }}
         component={Link}
-        to="/profile"
+        to="/Profile"
       >
         <Avatar
           alt="Andrew Simon"

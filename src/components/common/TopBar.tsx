@@ -7,14 +7,16 @@ import { styled } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import LogoutIcon from '@mui/icons-material/Logout';
 import Box from '@mui/material/Box';
+import { Link } from "react-router-dom";
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: '#f1f3f4', // Cor de fundo da barra de pesquisa
+  backgroundColor: '#f1f3f4',
   '&:hover': {
-    backgroundColor: '#e0e0e0', // Cor de fundo ao passar o mouse
+    backgroundColor: '#e0e0e0',
   },
   marginLeft: theme.spacing(3),
   width: '50%',
@@ -22,7 +24,7 @@ const Search = styled('div')(({ theme }) => ({
     marginLeft: theme.spacing(3),
     width: 'auto',
   },
-  border: '1px solid #ccc', // Adiciona uma borda visível
+  border: '1px solid #ccc',
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -36,7 +38,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: '#000', // Cor do texto na barra de pesquisa
+  color: '#000',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
@@ -45,17 +47,20 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
       width: '20ch',
     },
-    backgroundColor: '#fff', // Fundo do input para melhor contraste
+    backgroundColor: '#fff',
   },
 }));
 
 export const TopBar = () => {
+  const handleLogout = () => {
+    // Função de logout
+    console.log("Logout clicked");
+  };
+
   return (
-    <Box sx={{ display: 'flex' }}> {/* Layout flexível */}
-      {/* Simulando espaço da barra lateral */}
+    <Box sx={{ display: 'flex' }}>
       <Box sx={{ width: '250px', flexShrink: 0 }}></Box> 
 
-      {/* AppBar agora é estático para não sobrepor o conteúdo */}
       <AppBar position="relative" sx={{ backgroundColor: '#fff', boxShadow: 1, width: 'calc(100% - 250px)' }}>
         <Toolbar>
           <Typography variant="h6" noWrap component="div" sx={{ color: '#4a4a4a' }}>
@@ -78,6 +83,9 @@ export const TopBar = () => {
             </IconButton>
             <IconButton size="large" edge="end" color="inherit">
               <HelpOutlineIcon sx={{ color: '#4a4a4a', '&:hover': { color: '#00d1b2' } }} />
+            </IconButton>
+            <IconButton size="large" edge="end" color="inherit" onClick={handleLogout}>
+              <Link to="/Login"><LogoutIcon sx={{ color: '#4a4a4a', '&:hover': { color: '#00d1b2' } }} /></Link>
             </IconButton>
           </Box>
         </Toolbar>

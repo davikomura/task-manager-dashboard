@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import { TaskItem } from './TaskItem'; // Agora vamos manter o uso deste componente
+import { TaskItem } from '../components/TaskItem';
 import { Box, Typography, Dialog, DialogTitle, DialogContent, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import AddIcon from '@mui/icons-material/Add'; // Ícone de adicionar
-import { FilterBas } from './FilterBas';
+import AddIcon from '@mui/icons-material/Add';
+import { FilterBas } from '../components/filters/FilterBas';
 
 interface Task {
   id: number;
   title: string;
   dueDate: string;
-  description: string; // Adicionando um campo de descrição
+  description: string;
 }
 
 export const TaskList = () => {
@@ -33,11 +33,11 @@ export const TaskList = () => {
   ];
 
   const handleTaskClick = (task: Task) => {
-    setSelectedTask(task); // Define a task selecionada para exibir no modal
+    setSelectedTask(task);
   };
 
   const closeModal = () => {
-    setSelectedTask(null); // Fecha o modal
+    setSelectedTask(null);
   };
 
   const addNewTask = (columnTitle: string) => {
