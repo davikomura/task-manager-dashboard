@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { TaskItem } from './TaskItem'; // Agora vamos manter o uso deste componente
 import { Box, Typography, Dialog, DialogTitle, DialogContent, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import AddIcon from '@mui/icons-material/Add'; // Ícone de adicionar
 import { FilterBas } from './FilterBas';
 
 interface Task {
@@ -39,14 +40,19 @@ export const TaskList = () => {
     setSelectedTask(null); // Fecha o modal
   };
 
+  const addNewTask = (columnTitle: string) => {
+    console.log(`Adding new task to column: ${columnTitle}`);
+    // Lógica de adicionar novas tasks
+  };
+
   return (
     <Box sx={{ padding: '20px', marginLeft: '250px', height: '100vh' }}>
       <FilterBas />
-      <Box sx={{ display: 'flex', justifyContent: 'space-around' }}>
-        <TaskColumn title="To Do List" tasks={toDoTasks} onTaskClick={handleTaskClick} />
-        <TaskColumn title="In Progress" tasks={inProgressTasks} onTaskClick={handleTaskClick} />
-        <TaskColumn title="In Review" tasks={inReviewTasks} onTaskClick={handleTaskClick} />
-        <TaskColumn title="Done" tasks={doneTasks} onTaskClick={handleTaskClick} />
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: '20px', marginTop: '20px' }}>
+        <TaskColumn title="To Do List" tasks={toDoTasks} onTaskClick={handleTaskClick} onAddTask={addNewTask} />
+        <TaskColumn title="In Progress" tasks={inProgressTasks} onTaskClick={handleTaskClick} onAddTask={addNewTask} />
+        <TaskColumn title="In Review" tasks={inReviewTasks} onTaskClick={handleTaskClick} onAddTask={addNewTask} />
+        <TaskColumn title="Done" tasks={doneTasks} onTaskClick={handleTaskClick} onAddTask={addNewTask} />
       </Box>
 
       {/* Modal */}
@@ -78,11 +84,18 @@ interface TaskColumnProps {
   title: string;
   tasks: Task[];
   onTaskClick: (task: Task) => void;
+  onAddTask: (columnTitle: string) => void;
 }
 
-const TaskColumn = ({ title, tasks, onTaskClick }: TaskColumnProps) => (
-  <Box sx={{ width: '22%', padding: '10px' }}>
-    <Typography variant="h6" sx={{ marginBottom: '10px' }}>{title}</Typography>
+const TaskColumn = ({ title, tasks, onTaskClick, onAddTask }: TaskColumnProps) => (
+  <Box sx={{ width: '100%', padding: '10px', backgroundColor: '#f4f4f4', borderRadius: '8px' }}>
+    {/* Contêiner para centralizar o título e o botão */}
+    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '10px' }}>
+      <Typography variant="h6" sx={{ marginBottom: '10px' }}>{title}</Typography>
+      <IconButton onClick={() => onAddTask(title)}>
+        <AddIcon />
+      </IconButton>
+    </Box>
     {tasks.map(task => (
       <TaskItem key={task.id} task={task} onClick={() => onTaskClick(task)} /> 
     ))}
