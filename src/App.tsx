@@ -7,7 +7,7 @@ import { TopBar } from './components/common/TopBar'
 function App() {
   const location = useLocation();
 
-  const isLoginOrSignUpPage = location.pathname === '/Login';
+  const isLoginOrSignUpPage = location.pathname === '/Login' || location.pathname === '/Register';
 
   return (
     <>

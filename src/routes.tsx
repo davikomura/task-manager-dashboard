@@ -4,6 +4,7 @@ import { Dashboard } from './Pages/Dashboard.tsx';
 import { TaskList } from './Pages/TaskList.tsx';
 import { Profile } from './Pages/profile/Profile.tsx';
 import { Login } from './Pages/auth/Login.tsx';
+import { Register } from './Pages/auth/Register.tsx';
 
 const routes = [
 
@@ -26,6 +27,10 @@ const routes = [
       {
         path: "/Login",
         element: <Login />,
+      },
+      {
+        path: "/Register",
+        element: <Register />,
       },
     ],
   }

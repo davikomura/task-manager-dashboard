@@ -1,13 +1,13 @@
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 import {
-  Avatar, Button, TextField, Link, Grid, Box, Typography, Container, CssBaseline,
-  InputAdornment, IconButton, Paper, Divider
+  Avatar, Button, TextField, Grid, Box, Typography, Container, CssBaseline,
+  InputAdornment, IconButton, Paper
 } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import GoogleIcon from '@mui/icons-material/Google';
 
 export const Login = () => {
   const [email, setEmail] = useState('');
@@ -90,12 +90,12 @@ export const Login = () => {
 
             <Grid container justifyContent="space-between">
               <Grid item>
-                <Link href="#" variant="body2" color="primary">
+                <Link to="/">
                   Forgot password?
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2" color="primary">
+                <Link to="/Register">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
@@ -110,16 +110,6 @@ export const Login = () => {
             >
               Sign In
             </Button>
-
-            <Divider sx={{ my: 2 }}>Or Sign In With</Divider>
-
-            <Grid container spacing={2} justifyContent="center">
-              <Grid item>
-                <IconButton color="inherit">
-                  <GoogleIcon style={{ color: '#DB4437' }} />
-                </IconButton>
-              </Grid>
-            </Grid>
           </form>
         </Paper>
       </Box>
