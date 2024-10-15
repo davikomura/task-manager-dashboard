@@ -7,6 +7,7 @@ import { Login } from './Pages/auth/Login.tsx';
 import { Register } from './Pages/auth/Register.tsx';
 import { TeamPage } from './Pages/TeamPage.tsx';
 import { TeamMembersPage } from './Pages/TeamMembersPage.tsx';
+import { SettingsPage } from './Pages/SettingsPage.tsx';
 
 const routes = [
 
@@ -41,6 +42,10 @@ const routes = [
       {
         path: "/Team/:teamId",
         element: <TeamMembersPage />,
+      },
+      {
+        path: "/Settings",
+        element: <SettingsPage />,
       },
     ],
   }

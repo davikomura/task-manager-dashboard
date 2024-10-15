@@ -8,10 +8,11 @@ function App() {
   const location = useLocation();
 
   const isLoginOrSignUpPage = location.pathname === '/Login' || location.pathname === '/Register';
+  const isSettings = location.pathname === '/Settings'
 
   return (
     <>
-      {!isLoginOrSignUpPage && <TopBar />}
+      {!isLoginOrSignUpPage && !isSettings && <TopBar />}
       {!isLoginOrSignUpPage && <Header />}
       <Outlet />
     </>
