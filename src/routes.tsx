@@ -5,6 +5,8 @@ import { TaskList } from './Pages/TaskList.tsx';
 import { Profile } from './Pages/profile/Profile.tsx';
 import { Login } from './Pages/auth/Login.tsx';
 import { Register } from './Pages/auth/Register.tsx';
+import { TeamPage } from './Pages/TeamPage.tsx';
+import { TeamMembersPage } from './Pages/TeamMembersPage.tsx';
 
 const routes = [
 
@@ -31,6 +33,14 @@ const routes = [
       {
         path: "/Register",
         element: <Register />,
+      },
+      {
+        path: "/Team",
+        element: <TeamPage />,
+      },
+      {
+        path: "/Team/:teamId",
+        element: <TeamMembersPage />,
       },
     ],
   }
